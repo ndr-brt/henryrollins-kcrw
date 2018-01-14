@@ -1,6 +1,6 @@
 # Henry Rollins KCRW download
 
-Don't know what you think about, but I'm a big fan of Henry Rollins' KCRW show...  
+Dunno what you think about, but I'm a big fan of Henry Rollins' KCRW show...  
 
 Tired about silly web players and the annoying kcrw app, I deceided to write down a little script to download all the episodes.
 
