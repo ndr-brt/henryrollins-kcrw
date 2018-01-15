@@ -40,10 +40,13 @@ else:
             media = parsed['media']
             if (len(media) == 0):
                 print ("Media not available for show #{} trying to download in other way...".format(number))
-                shortdate = toShortDate(parsed['airdate'])
-                download("https://podcast-download.kcrw.com/kcrw/audio/podcast/music/hr/hr{}KCRW_Broadcast_{}.mp3".format(shortdate, number))
-                download("https://kcrw-od.streamguys1.com/kcrw/audio/website/music/hr/hr{}kcrw_broadcast_{}.mp3".format(shortdate, number))
-                download("https://kcrw-od.streamguys1.com/kcrw/audio/website/music/hr/KCRW-henry_rollins-kcrw_broadcast_{}.mp3".format(number))
+                if (parsed['airdate'] is not None):
+                    shortdate = toShortDate(parsed['airdate'])
+                    download("https://podcast-download.kcrw.com/kcrw/audio/podcast/music/hr/hr{}KCRW_Broadcast_{}.mp3".format(shortdate, number))
+                    download("https://kcrw-od.streamguys1.com/kcrw/audio/website/music/hr/hr{}kcrw_broadcast_{}.mp3".format(shortdate, number))
+                    download("https://kcrw-od.streamguys1.com/kcrw/audio/website/music/hr/KCRW-henry_rollins-kcrw_broadcast_{}.mp3".format(number))
+                else:
+                    print ("Airdate not available, cannot determine url")
             else:
                 print ("Media available for show #{}".format(number))
                 download(media[0]['url'])
