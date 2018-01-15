@@ -7,7 +7,7 @@ import datetime
 
 def download(url):
     filename = url.split('/')[-1]
-    if (os.path.isfile(filename) && os.stat(filename).st_size > 0):
+    if (os.path.isfile(filename) and os.stat(filename).st_size > 0):
         print ("File {} already downloaded".format(filename))
         return False
     else:
